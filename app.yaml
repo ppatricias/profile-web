@@ -1,12 +1,12 @@
-runtime: python27
-api_version: 1
-threadsafe: true
+runtime: python37
 
 handlers:
-- url: /
-  static_files: web/index.html
-  upload: web/index.html
+  - url: /img
+    static_dir: img
 
-- url: /(.*)
-  static_files: web/\1
-  upload: web/(.*)
+  - url: /.*
+    static_files: index.html
+    upload: index.html
+
+env_variables:
+  CLOUD_STORAGE_BUCKET: pp-image-bucket
